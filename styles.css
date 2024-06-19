@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #navContainer {
+    position: absolute;
+    top: 33.5vh; /* Adjusted as needed */
+    left: 45vw; /* Adjusted as needed */
+    font-size: 1.8vh;
+    transform: translateX(-50%); /* Center the navigation container horizontally */
+    background-color: #f0f0f0; /* Slight background to make text readable over canvas */
+    display: flex;
+    gap: 2vw; /* Spacing between links */
+  }
+  
+  #navContainer a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+  }
+  
+  #navContainer a:hover {
+    background-color: #ddd;
+  }
+  
+  .textContainer {
+    display: none; /* Hide all text containers by default */
+    position: absolute;
+    top: 41.5vh; /* Adjusted as needed */
+    left: 6vw; /* Adjusted as needed */
+    color: black;
+    width: 76.2vw;
+    height: 45.5vh;
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    opacity: 0;
+  }
+  
+  .textContainer.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  #name {
+    position: absolute;
+    top: 10vh;
+    left: 59vw;
+    font-size: 3vh;
+  }
+  
+  #bio {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #bio p {
+    margin-right: 6vw;
+  }
+  
+  #bio img {
+    width: 20vw; 
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+  
