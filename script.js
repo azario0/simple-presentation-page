@@ -6,9 +6,11 @@ canvas.height = window.innerHeight;
 
 var viewportWidth = window.innerWidth;
 var viewportHeight = window.innerHeight;
-function drawLines() {
+var cor = "black";
+function drawLines(cor) {
   ctx.font = "1vw Arial";
   ctx.textBaseline = "middle";
+  ctx.strokeStyle = cor;
   var viewportWidth = window.innerWidth;
   var viewportHeight = window.innerHeight;
 
@@ -31,8 +33,7 @@ function drawLines() {
   ctx.beginPath();
   ctx.moveTo(startX2, startY2);
   ctx.lineTo(endX2, endY2);
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
+
   ctx.stroke();
 
   var startX2 = endX2;
@@ -42,8 +43,7 @@ function drawLines() {
   ctx.beginPath();
   ctx.moveTo(startX2, startY2);
   ctx.lineTo(endX2, endY2);
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
+
   ctx.stroke();
 
   var startX2 = endX2;
@@ -53,8 +53,7 @@ function drawLines() {
   ctx.beginPath();
   ctx.moveTo(startX2, startY2);
   ctx.lineTo(endX2, endY2);
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
+
   ctx.stroke();
 
   var startX2 = endX2;
@@ -64,18 +63,17 @@ function drawLines() {
   ctx.beginPath();
   ctx.moveTo(startX2, startY2);
   ctx.lineTo(endX2, endY2);
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
+
   ctx.stroke();
 }
-drawLines();
+drawLines(cor);
 
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   viewportWidth = window.innerWidth;
   viewportHeight = window.innerHeight;
-  drawLines();
+  drawLines(cor);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -103,5 +101,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // Optionally, show the first section by default
   if (textContainers.length > 0) {
     textContainers[0].classList.add("active");
+  }
+});
+
+
+document.getElementById("toggleImage").addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+  var navContainer = document.getElementById("navContainer");
+  navContainer.classList.toggle("dark-mode");
+
+  var textContainers = document.getElementsByClassName('textContainer');
+    for (var i = 0; i < textContainers.length; i++) {
+        textContainers[i].classList.toggle('dark-mode');
+    }
+  var img = document.getElementById("toggleImage");
+  if (document.body.classList.contains("dark-mode")) {
+    img.src = "Next vid/black.png";
+    cor = "white";
+    drawLines(cor);
+  } else {
+    img.src = "Next vid/light.png";
+    cor = "black";
+    drawLines(cor);
   }
 });
