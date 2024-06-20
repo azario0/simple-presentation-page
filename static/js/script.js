@@ -10,7 +10,9 @@ var cor = "black";
 function drawLines(cor) {
   ctx.font = "1vw Arial";
   ctx.textBaseline = "middle";
+
   ctx.strokeStyle = cor;
+  
   var viewportWidth = window.innerWidth;
   var viewportHeight = window.innerHeight;
 
@@ -116,11 +118,11 @@ document.getElementById("toggleImage").addEventListener("click", function () {
     }
   var img = document.getElementById("toggleImage");
   if (document.body.classList.contains("dark-mode")) {
-    img.src = "Next vid/black.png";
+    img.src = "static/images/black.png";
     cor = "white";
     drawLines(cor);
   } else {
-    img.src = "Next vid/light.png";
+    img.src = "static/images/light.png";
     cor = "black";
     drawLines(cor);
   }

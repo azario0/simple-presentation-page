@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
   <body>
     <canvas id="myCanvas" class="main"></canvas>
@@ -16,7 +16,7 @@
       <a href="#contact" data-target="contact">Contact me</a>
     </div>
     <p id="name">Benmalek zohir</p>
-    <img id="toggleImage" src="Next vid/light.png" alt="Toggle Image">
+    <img id="toggleImage" src="{{ url_for('static', filename='images/light.png') }}" alt="Toggle Image">
     <div id="bio" class="textContainer">
       <p>
         Hi, I'm Benmalek Zohir, a passionate programmer from Algeria with a
@@ -29,20 +29,10 @@
         Additionally, I'm proficient in C and PHP. My goal is to make a
         meaningful impact through my work in technology.
       </p>
-      <img src="image1.jpg" alt="">
+      <img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="">
     </div>
     <div id="certificates" class="textContainer">
-      <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-      assumenda iste iusto illo alias asperiores ducimus fugiat, autem provident
-      debitis eos dignissimos sapiente consectetur in facere, dolor sint
-      reprehenderit veniam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-      assumenda iste iusto illo alias asperiores ducimus fugiat, autem provident
-      debitis eos dignissimos sapiente consectetur in facere, dolor sint
-      reprehenderit veniam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-      assumenda iste iusto illo alias asperiores ducimus fugiat, autem provident
-      debitis eos dignissimos sapiente consectetur in facere, dolor sint
-      reprehenderit veniam!</p>
+      
     </div>
     <div id="applications" class="textContainer"> 
       <p>
@@ -64,6 +54,6 @@
       
     </div>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
